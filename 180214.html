@@ -1,0 +1,93 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Hola Mundo con AJAX</title>
+ 
+<script type="text/javascript">
+
+var READY_STATE_UNINITIALIZED=0; 
+var READY_STATE_LOADING=1; 
+var READY_STATE_LOADED=2;
+var READY_STATE_INTERACTIVE=3; 
+var READY_STATE_COMPLETE=4;
+ 
+var peticion_http;
+
+
+//Segun el número, se descargará un fichero u otro
+
+ 
+window.onload = function(){
+
+function muestraContenido() {
+  if(peticion_http.readyState == READY_STATE_COMPLETE) {
+    if(peticion_http.status == 200) {
+		var textoRespuesta = peticion_http.responseText;
+		alert(textoRespuesta);
+		textoRespuesta=textoRespuesta.split(",");
+		//alert(textoRespuesta[0]);
+		//alert(textoRespuesta[1]);
+		//alert(textoRespuesta[2]);
+		//alert(textoRespuesta[3]);
+		
+
+		select = document.getElementById("lista");
+		
+		var i=0;
+		while(textoRespuesta[i]!=null)
+		{
+		//alert(i);
+        //alert(textoRespuesta[i])
+		//var nuevoNodo = document.createTextNode(textoRespuesta[i++]);
+		option = document.createElement("option");
+		option.text = textoRespuesta[i++];
+		option.value = "myvalue"+(i-1);
+
+		select.appendChild(option);
+		}
+		
+		
+
+    }
+  }
+}
+
+function cargaContenido(url, metodo, funcion) {
+  peticion_http = inicializa_xhr();
+ 
+  if(peticion_http) {
+    peticion_http.onreadystatechange = funcion;
+    peticion_http.open(metodo, url, true);
+    peticion_http.send(null);
+  }
+}
+
+function inicializa_xhr() {
+  if(window.XMLHttpRequest) {
+    return new XMLHttpRequest();
+  }
+  else if(window.ActiveXObject) {
+    return new ActiveXObject("Microsoft.XMLHTTP");
+  }
+}
+
+	document.getElementById("boton1").onclick = function(){
+													descargaArchivo();
+												}
+												
+												
+												
+function descargaArchivo() {
+alert("prueba");
+	  cargaContenido("http://localhost/proyecto/180214.xml", "GET", muestraContenido);
+}
+
+}
+</script>
+ 
+</head>
+<body>
+<input id="boton1" type="button" value="Cargar lista">
+<p id="parrafo"></p>
+</body>
+</html>
