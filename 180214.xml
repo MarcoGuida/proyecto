@@ -1,4 +1,32 @@
 <xml>
-<tarea>prueba</tarea>
-<hora>20:00</hora>
+
+<lun>
+	<tarea hora="0800">Una tarea del lunes</tarea>
+	<tarea hora="1600">Otra tarea del lunes</tarea>
+</lun>
+
+<mar>
+	<tarea hora="0900">Una tarea del martes</tarea>
+</mar>
+
+<mie>
+	<tarea hora="2300">Una tarea del miercoles</tarea>
+</mie>
+
+<jue>
+	<tarea hora="1600">Primera tarea del jueves</tarea>
+	<tarea hora="1900">Segunda tarea del jueves</tarea>
+	<tarea hora="2100">Tercera tarea del jueves</tarea>
+</jue>
+
+<vie>
+	<tarea hora="1600">Primera tarea del viernes</tarea>
+</vie>
+
+<sab>
+</sab>
+
+<dom>
+</dom>
+
 </xml>

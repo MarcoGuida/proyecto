@@ -5,18 +5,9 @@
  
 <script type="text/javascript">
 
-var READY_STATE_UNINITIALIZED=0; 
-var READY_STATE_LOADING=1; 
-var READY_STATE_LOADED=2;
-var READY_STATE_INTERACTIVE=3; 
 var READY_STATE_COMPLETE=4;
- 
 var peticion_http;
 
-
-//Segun el número, se descargará un fichero u otro
-
- 
 window.onload = function(){
 
 function muestraContenido() {
@@ -25,29 +16,18 @@ function muestraContenido() {
 		var textoRespuesta = peticion_http.responseText;
 		alert(textoRespuesta);
 		textoRespuesta=textoRespuesta.split(",");
-		//alert(textoRespuesta[0]);
-		//alert(textoRespuesta[1]);
-		//alert(textoRespuesta[2]);
-		//alert(textoRespuesta[3]);
-		
 
 		select = document.getElementById("lista");
 		
 		var i=0;
 		while(textoRespuesta[i]!=null)
 		{
-		//alert(i);
-        //alert(textoRespuesta[i])
-		//var nuevoNodo = document.createTextNode(textoRespuesta[i++]);
 		option = document.createElement("option");
 		option.text = textoRespuesta[i++];
 		option.value = "myvalue"+(i-1);
 
 		select.appendChild(option);
 		}
-		
-		
-
     }
   }
 }
@@ -78,8 +58,8 @@ function inicializa_xhr() {
 												
 												
 function descargaArchivo() {
-alert("prueba");
-	  cargaContenido("http://localhost/proyecto/180214.xml", "GET", muestraContenido);
+//alert("prueba");
+	  cargaContenido("http://localhost/proyectoMBox/180214.xml", "GET", muestraContenido);
 }
 
 }
@@ -88,6 +68,47 @@ alert("prueba");
 </head>
 <body>
 <input id="boton1" type="button" value="Cargar lista">
-<p id="parrafo"></p>
+<table  border="1">
+<tr>
+  <td></td>
+  <td>Lunes</td>
+  <td>Martes</td>
+    <td>Miercoles</td>
+  <td>Jueves</td>
+  <td>Viernes</td>
+    <td>Sabado</td>
+  <td>Domingo</td>
+</tr>
+<tr>
+  <td>Mañana</td>
+  <td></td>
+  <td></td>
+    <td></td>
+  <td></td>
+  <td></td>
+    <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>Tarde</td>
+  <td></td>
+  <td></td>
+    <td></td>
+  <td></td>
+  <td></td>
+    <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>Noche</td>
+  <td></td>
+  <td></td>
+    <td></td>
+  <td></td>
+  <td></td>
+    <td></td>
+  <td></td>
+</tr>
+</table> 
 </body>
 </html>

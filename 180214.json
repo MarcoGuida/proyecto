@@ -1,0 +1,54 @@
+{
+  "xml": {
+    "lun": {
+      "tarea": [
+        {
+          "-hora": "0800",
+          "#text": "Una tarea del lunes"
+        },
+        {
+          "-hora": "1600",
+          "#text": "Otra tarea del lunes"
+        }
+      ]
+    },
+    "mar": {
+      "tarea": {
+        "-hora": "0900",
+        "#text": "Una tarea del martes"
+      }
+    },
+    "mie": {
+      "tarea": {
+        "-hora": "2300",
+        "#text": "Una tarea del miercoles"
+      }
+    },
+    "jue": {
+      "tarea": [
+        {
+          "-hora": "1600",
+          "#text": "Primera tarea del jueves"
+        },
+        {
+          "-hora": "1900",
+          "#text": "Segunda tarea del jueves"
+        },
+        {
+          "-hora": "2100",
+          "#text": "Tercera tarea del jueves"
+        }
+      ]
+    },
+    "vie": {
+      "tarea": {
+        "-hora": "1600",
+        "#text": "Primera tarea del viernes"
+      }
+    },
+    "sab": "
+",
+    "dom": "
+"
+  }
+}
