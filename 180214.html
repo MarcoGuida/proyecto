@@ -15,6 +15,12 @@ function muestraContenido() {
     if(peticion_http.status == 200) {
 		var textoRespuesta = peticion_http.responseText;
 		alert(textoRespuesta);
+		
+		//prueba json
+		var JSONObject= {"name":"John Johnson"};
+		document.getElementById("lunMan").innerHTML=JSONObject.name;
+		//
+		
 		textoRespuesta=textoRespuesta.split(",");
 
 		select = document.getElementById("lista");
@@ -59,10 +65,13 @@ function inicializa_xhr() {
 												
 function descargaArchivo() {
 //alert("prueba");
-	  cargaContenido("http://localhost/proyectoMBox/180214.xml", "GET", muestraContenido);
+	  cargaContenido("http://localhost/proyectoMBox/180214.json", "GET", muestraContenido);
 }
 
 }
+
+
+
 </script>
  
 </head>
@@ -81,7 +90,7 @@ function descargaArchivo() {
 </tr>
 <tr>
   <td>Mañana</td>
-  <td></td>
+  <td id="lunMan"></td>
   <td></td>
     <td></td>
   <td></td>
